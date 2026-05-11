@@ -20,3 +20,15 @@ def pregunta_10():
 
 
     """
+    data= open("c:/Analitica_Descriptiva/Taller_1/LAB-01-programacion-basica-en-python-rcburbanoo/files/input/data.csv","r").readlines()
+    resultado=[]
+    for line in data:
+        fila=line.strip().split("\t")  
+        letra=fila[0]
+        contador_1=len(fila[3].split(","))
+        contador_2=len(fila[4].split(","))
+        resultado.append((letra,contador_1,contador_2))
+    return resultado
+
+
+        

@@ -24,3 +24,18 @@ def pregunta_09():
      'jjj': 18}}
 
     """
+    data= open("c:/Analitica_Descriptiva/Taller_1/LAB-01-programacion-basica-en-python-rcburbanoo/files/input/data.csv","r").readlines()
+    diccionario={}
+    for line in data:
+        fila=line.strip().split("\t")  
+        dic=fila[4].split(",")
+        for elemento in dic:
+            key,value=elemento.split(":")
+            if key in diccionario:
+                diccionario[key]=diccionario[key]+1
+            else:
+                diccionario[key]=1
+
+
+    return dict(sorted(diccionario.items()))
+

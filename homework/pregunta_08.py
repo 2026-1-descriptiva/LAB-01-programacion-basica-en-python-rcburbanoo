@@ -27,3 +27,18 @@ def pregunta_08():
      (9, ['A', 'B', 'C', 'E'])]
 
     """
+    data= open("c:/Analitica_Descriptiva/Taller_1/LAB-01-programacion-basica-en-python-rcburbanoo/files/input/data.csv","r").readlines()
+    dic={}
+    for line in data:
+        fila=line.strip().split("\t")  
+        numero=int(fila[1])
+        letra=fila[0]
+        if numero in dic:
+            if letra not in dic[numero]:
+                dic[numero].append(letra)
+        else:
+            dic[numero]=[letra]
+    for numero in dic:
+        dic[numero]=sorted(dic[numero])
+    return sorted(dic.items())
+

@@ -26,3 +26,13 @@ def pregunta_04():
      ('12', 3)]
 
     """
+    data= open("c:/Analitica_Descriptiva/Taller_1/LAB-01-programacion-basica-en-python-rcburbanoo/files/input/data.csv")
+    dic={}
+    for line in data:
+        fila=line.strip().split("\t")  
+        mes=fila[2].split("-")[1]
+        if mes in dic:
+            dic[mes]=dic[mes]+1
+        else:
+            dic[mes]=1
+    return sorted(dic.items())

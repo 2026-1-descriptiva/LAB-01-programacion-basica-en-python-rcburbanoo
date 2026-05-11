@@ -16,3 +16,18 @@ def pregunta_11():
 
 
     """
+    data= open("c:/Analitica_Descriptiva/Taller_1/LAB-01-programacion-basica-en-python-rcburbanoo/files/input/data.csv","r").readlines()
+    dic={}
+    
+    for line in data:
+        fila=line.strip().split("\t")  
+        numero=int(fila[1])
+        letras=fila[3].split(",")
+        for letra in letras:
+            if letra in dic:
+                dic[letra]=dic[letra]+numero
+            else:
+                dic[letra]=numero
+    
+    return dict(sorted(dic.items()))
+

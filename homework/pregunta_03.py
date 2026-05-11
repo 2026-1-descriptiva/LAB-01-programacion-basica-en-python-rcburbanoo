@@ -15,3 +15,17 @@ def pregunta_03():
     [('A', 53), ('B', 36), ('C', 27), ('D', 31), ('E', 67)]
 
     """
+    data= open("c:/Analitica_Descriptiva/Taller_1/LAB-01-programacion-basica-en-python-rcburbanoo/files/input/data.csv","r").readlines()
+    sum=0
+    dic={}
+    for line in data:
+        fila=line.strip().split("\t")
+              
+        if fila[0] in dic:
+            dic[fila[0]]=dic[fila[0]]+int(fila[1])
+        else:
+            dic[fila[0]]=  int(fila[1])
+    return sorted(dic.items())
+
+
+

@@ -26,3 +26,29 @@ def pregunta_06():
      ('jjj', 5, 17)]
 
     """
+    data= open("c:/Analitica_Descriptiva/Taller_1/LAB-01-programacion-basica-en-python-rcburbanoo/files/input/data.csv","r").readlines()
+    
+    diccionario={}
+    for line in data:
+        fila=line.strip().split("\t")  
+        dic=fila[4].split(",")
+        
+        for elemento in dic:
+            clave,valor=elemento.split(":")
+            if clave in diccionario:
+                if int(valor)>diccionario[clave][1]:
+                    diccionario[clave]= (diccionario[clave][0],int(valor))
+                elif int(valor)<diccionario[clave][0]:
+                    diccionario[clave]= (int(valor),diccionario[clave][1])
+            else:
+                diccionario[clave]= (int(valor),int(valor))
+                
+        
+    resultado=[]
+    for clave,valor in diccionario.items():
+        resultado.append((clave,valor[0],valor[1]))
+        
+    return sorted(resultado)
+
+
+    
