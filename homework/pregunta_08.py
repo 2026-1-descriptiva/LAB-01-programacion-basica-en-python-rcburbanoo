@@ -27,7 +27,7 @@ def pregunta_08():
      (9, ['A', 'B', 'C', 'E'])]
 
     """
-    data= open("c:/Analitica_Descriptiva/Taller_1/LAB-01-programacion-basica-en-python-rcburbanoo/files/input/data.csv","r").readlines()
+    data= open("files/input/data.csv","r").readlines()
     dic={}
     for line in data:
         fila=line.strip().split("\t")  

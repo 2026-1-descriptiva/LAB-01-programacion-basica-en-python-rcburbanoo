@@ -14,10 +14,11 @@ def pregunta_01():
     214
 
     """
-    data= open("c:/Analitica_Descriptiva/Taller_1/LAB-01-programacion-basica-en-python-rcburbanoo/files/input/data.csv","r").readlines()
+    data= open("files/input/data.csv","r").readlines()
     sum=0
     for line in data:
         fila=line.strip().split("\t")
         sum=sum+int(fila[1])
     return sum
 
+print(pregunta_01())

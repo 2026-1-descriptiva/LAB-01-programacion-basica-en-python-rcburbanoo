@@ -20,7 +20,7 @@ def pregunta_10():
 
 
     """
-    data= open("c:/Analitica_Descriptiva/Taller_1/LAB-01-programacion-basica-en-python-rcburbanoo/files/input/data.csv","r").readlines()
+    data= open("files/input/data.csv","r").readlines()
     resultado=[]
     for line in data:
         fila=line.strip().split("\t")  
